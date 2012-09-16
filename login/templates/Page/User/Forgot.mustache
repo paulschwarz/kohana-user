@@ -1,0 +1,11 @@
+<p><?php echo __('Please send me a link to reset my password.'); ?></p>
+<form action="" method=post>
+	{{#email}}
+	<dt>
+		<label for="{{id}}">{{label}}</label>
+		{{#has_error}}<label for="{{id}}" class=error>{{error}}</label>{{/has_error}}
+	</dt>
+	<dd><input name="{{name}}" id="{{id}}"{{#has_error}} class="highlight bad"{{/has_error}} /></dd>
+	{{/email}}
+	<dd><input type=submit value="Reset password" /></dd>
+</form>

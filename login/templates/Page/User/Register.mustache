@@ -1,0 +1,55 @@
+<form action="" method=post>
+	{{#has_errors}}
+	<ul class=errors>
+		{{#errors}}
+		<li><label for="{{key}}">{{error}}</label></li>
+		{{/errors}}
+	</ul>
+	{{/has_errors}}
+	<dl>
+
+		{{#username}}
+		<dt>
+			<label for="{{id}}">{{label}}</label>
+			{{#has_error}}<label for="{{id}}" class=error>{{error}}</label>{{/has_error}}
+		</dt>
+		<dd>
+			<input autocomplete=off name="{{name}}" value="{{value}}" id="{{id}}"{{#has_error}} class="highlight bad"{{/has_error}} />
+		</dd>
+		{{/username}}
+
+		{{#email}}
+		<dt>
+			<label for="{{id}}">{{label}}</label>
+			{{#has_error}}<label for="{{id}}" class=error>{{error}}</label>{{/has_error}}
+		</dt>
+		<dd>
+			<input autocomplete=off name="{{name}}" value="{{value}}" id="{{id}}"{{#has_error}} class="highlight bad"{{/has_error}} />
+		</dd>
+		{{/email}}
+
+		{{#password}}
+		<dt>
+			<label for="{{id}}">{{label}}</label>
+			{{#has_error}}<label for="{{id}}" class=error>{{error}}</label>{{/has_error}}
+		</dt>
+		<dd>
+			<input autocomplete=off type=password name="{{name}}" id="{{id}}"{{#has_error}} class="highlight bad"{{/has_error}} />
+		</dd>
+		{{/password}}
+
+		{{#confirm}}
+		<dt>
+			<label for="{{id}}">{{label}}</label>
+			{{#has_error}}<label for="{{id}}" class=error>{{error}}</label>{{/has_error}}
+		</dt>
+		<dd>
+			<input type=password name="{{name}}" id="{{id}}"{{#has_error}} class="highlight bad"{{/has_error}} />
+		</dd>
+		{{/confirm}}
+
+		{{{captcha}}}
+
+		<dd><input type=submit value="Register" /></dd>
+	</dl>
+</form>

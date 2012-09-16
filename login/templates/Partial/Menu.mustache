@@ -1,0 +1,10 @@
+<ul>
+	{{#menu}}
+	<li>
+		<a href="{{href}}">{{name}}</a>
+		{{#submenu}}
+			{{>menu}}
+		{{/submenu}}
+	</li>
+	{{/menu}}
+</ul>

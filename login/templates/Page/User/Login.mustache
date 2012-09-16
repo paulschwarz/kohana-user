@@ -1,0 +1,53 @@
+<form action="" method=post>
+	{{#has_errors}}
+	<ul class=errors>
+		{{#errors}}
+		<li><label for="{{key}}">{{error}}</label></li>
+		{{/errors}}
+	</ul>
+	{{/has_errors}}
+	<dl>
+
+		{{#username}}
+		<dt>
+			<label for="{{id}}">{{label}}</label>
+			{{#has_error}}<label for="{{id}}" class=error>{{error}}</label>{{/has_error}}
+		</dt>
+		<dd><input name="{{name}}" value="{{value}}" id="{{id}}"{{#has_error}} class="highlight bad"{{/has_error}} /></dd>
+		{{/username}}
+
+		{{#password}}
+		<dt>
+			<label for="{{id}}">{{label}}</label>
+			{{#has_error}}<label for="{{id}}" class=error>{{error}}</label>{{/has_error}}
+		</dt>
+		<dd><input type=password name="{{name}}" id="{{id}}"{{#has_error}} class="highlight bad"{{/has_error}} /></dd>
+		{{/password}}
+
+		{{#remember}}
+		<dt>
+			<label for="{{id}}">{{label}}</label>
+		</dt>
+		<dd><input type=checkbox name="{{name}}" id="{{id}}" /></dd>
+		{{/remember}}
+
+		<dd><input type=submit value="Log in" /></dd>
+
+		<dd><a href=/user/forgot>Forgot password?</a></dd>
+	</dl>
+</form>
+
+<dl>
+	{{#allow_registration}}
+	<dd>Not registered? <a href=/user/register>Sign up</a></dd>
+	{{/allow_registration}}
+</dl>
+
+{{#has_providers}}
+<p>Log in using a provider</p>
+<ul>
+	{{#providers}}
+	<li><a class="login_provider {{name}}" href="{{href}}"><span>{{name}}</span></a></li>
+	{{/providers}}
+</ul>
+{{/has_providers}}

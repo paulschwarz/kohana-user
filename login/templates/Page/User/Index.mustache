@@ -1,0 +1,32 @@
+<a href=/user/logout>Log out</a>
+<a href=/user/edit>Edit Account</a>
+<a href=/user/password>Edit Password</a>
+<a href=/user/deregister>Delete Account</a>
+
+<p>This is your information, {{user.username}}</p>
+<p>Username: {{user.username}}</p>
+<p>Email: {{user.email}}</p>
+<p>Last login: {{user.last_login}}</p>
+<p>Total log ins: {{user.logins}}</p>
+
+
+<div>
+	{{#has_identities}}
+	<h2>Accounts associated with your user profile</h2>
+	<ul>
+		{{#identities}}
+		<li><a class="associated_account {{name}}"><span>{{name}}</span></a></li>
+		{{/identities}}
+	</ul>
+	{{/has_identities}}
+
+	{{#has_providers}}
+	<h2>Additional account providers</h2>
+	<p>Click the provider icon to associate it with your existing account.</p>
+	<ul>
+		{{#providers}}
+		<li><a class="associated_account {{name}}" href="{{href}}"><span>{{name}}</span></a></li>
+		{{/providers}}
+	</ul>
+	{{/has_providers}}
+</div>
