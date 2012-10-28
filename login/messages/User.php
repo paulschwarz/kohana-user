@@ -6,13 +6,13 @@ return
 	[
 		'label'			=> 'Username or email',
 		'not_empty' 	=> 'Username must not be empty.',
-		'jailed'		=> 'Too many failed log in attempts. Please try again after 5 minutes.',
 	],
 	'username' =>
 	[
 		'label'			=> 'Username',
 		'not_empty' 	=> 'Username must not be empty.',
 		'unique' 		=> 'Username already in use. Please select a different one.',
+        'jailed'		=> 'Too many failed log in attempts. Please try again after 5 minutes.',
 	],
 	'email' =>
 	[
